@@ -1,15 +1,40 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('home'); 
   const links = [
-    { name: 'Home', active: true },
-    { name: 'Service', active: false },
-    { name: 'About', active: false },
-    { name: 'Pricing', active: false },
-    { name: 'Support', active: false },
+    { name: 'Home', id: 'home' },
+    { name: 'Service', id: 'features' },
+    { name: 'About', id:'works' },
+    { name: 'Pricing', id: 'popular' },
+    { name: 'Support', id: 'reviews' },
   ];
+
+  useEffect(() => {
+    const observerOptions ={
+      root: null,
+      rootMargin: '-50½ 0 px -50½ 0px',
+      threshold: 0,
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    links.forEach((link) => {
+      const element = document.getElementById(link.id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();}, []);
 
   return (
     <nav className="w-full h-[80px] md:h-[128px] bg-white px-4 md:px-12 lg:px-20 sticky top-0 z-50 shadow-sm font-poppins">
