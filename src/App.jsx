@@ -8,13 +8,15 @@ import Footer from './sections/footer';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white overflow-x-hidden">
+    <div className="min-h-screen bg-white">
       <Nav />
+      <main className="w-full overflow-x-hidden">
       <Hero />
       <Features />
       <Works />
       <Popular />
       <Reviews />
+        </main>
       <Footer />
     </div>
   );
