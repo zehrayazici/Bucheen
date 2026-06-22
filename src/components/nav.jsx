@@ -7,8 +7,8 @@ const Nav = () => {
 
   const links = [
     { name: 'Home', id: 'home' },
-    { name: 'Service', id: 'features' },
-    { name: 'About', id: 'works' },
+    { name: 'Service', id: 'service' },
+    { name: 'About', id: 'about' },
     { name: 'Pricing', id: 'popular' },
     { name: 'Support', id: 'reviews' },
   ];
