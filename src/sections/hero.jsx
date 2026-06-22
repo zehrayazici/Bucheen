@@ -7,7 +7,7 @@ const Hero = () => {
 
   return (
     <section 
-      id="home" 
+      id="hero" 
       className="w-full bg-[#FFF8F7] md:bg-[#FFF8F7] py-12 md:py-24 px-4 md:px-12 lg:px-20 font-poppins overflow-hidden relative"
     >
       <div className="absolute lg:hidden pointer-events-none opacity-50" style={{ width: '305.4px', height: '281.3px', left: '-48px', top: '274px' }}>
