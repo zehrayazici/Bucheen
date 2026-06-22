@@ -6,7 +6,7 @@ const Nav = () => {
   const [activeSection, setActiveSection] = useState('home');
 
   const links = [
-    { name: 'Home', id: 'home' },
+    { name: 'Home', id: 'hero' },
     { name: 'Service', id: 'service' },
     { name: 'About', id: 'about' },
     { name: 'Pricing', id: 'popular' },
